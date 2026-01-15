@@ -101,6 +101,9 @@
         variant = "mocha";
         accent = "lavender";
       })
+
+      # Only for nvim/TreeSitter
+      gcc
     ];
   };
 
