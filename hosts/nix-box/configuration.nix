@@ -34,7 +34,6 @@
     };
   };
 
-
   # --- Locale & Time ---
   time.timeZone = "America/Sao_Paulo";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -85,7 +84,6 @@
       playerctl
       bibata-cursors
       papirus-icon-theme
-      catppuccin-qt5ct
       bibata-cursors
       papirus-icon-theme
       kdePackages.qtstyleplugin-kvantum
@@ -96,10 +94,6 @@
       (catppuccin-gtk.override {
         variant = "mocha";
         accents = [ "lavender" ];
-      })
-      (catppuccin-kvantum.override {
-        variant = "mocha";
-        accent = "lavender";
       })
 
       # Only for nvim/TreeSitter
@@ -184,7 +178,7 @@
 
   # --- Theming Configuration ---
   qt.style = "kvantum";
-  qt.platformTheme = "qt6ct";
+  qt.platformTheme = "qt5ct";
 
   # Fonts
   fonts.packages = with pkgs.nerd-fonts; [ 
@@ -207,6 +201,10 @@
     neovim
     git
     wget
+    (catppuccin-kvantum.override {
+      variant = "mocha";
+      accent = "lavender";
+    })
   ];
 
   # --- Polkit Agent (for hyprland) ---
@@ -260,4 +258,6 @@
 
   # --- System State ---
   system.stateVersion = "25.11"; 
+
+  environment.pathsToLink = [ "/share/Kvantum" ];
 }
